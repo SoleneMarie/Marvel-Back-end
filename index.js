@@ -4,7 +4,12 @@ const axios = require("axios");
 app.use(express.json());
 require("dotenv").config();
 const cors = require("cors");
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: "*",
+  })
+);
 
 const characters = require("./Routes/characters");
 app.use(characters);
@@ -25,6 +30,6 @@ app.all("*", (req, res) => {
   res.status(200).json({ message: "This route does not exist 🥸" });
 });
 
-app.listen(3000 || process.env.PORT, () => {
-  console.log("Server started");
+app.listen(process.env.PORT, () => {
+  console.log("Server started", process.env.PORT || 3000);
 });
