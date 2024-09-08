@@ -18,6 +18,8 @@ const comicsCharacid = require("./Routes/comics-characterid");
 app.use(comicsCharacid);
 const favorites = require("./Routes/favorites");
 app.use(favorites);
+const checkConnect = require("./checkconnect");
+app.use(checkConnect);
 
 app.all("*", (req, res) => {
   res.status(200).json({ message: "This route does not exist 🥸" });

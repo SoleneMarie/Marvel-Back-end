@@ -9,7 +9,9 @@ try {
   );
   console.log(process.env.API_KEY.slice(0, 2) + process.env.API_KEY.slice(-2));
 } catch (error) {
-  console.log(error);
+  console.log(
+    error + process.env.API_KEY.slice(0, 2) + process.env.API_KEY.slice(-2)
+  );
 }
 
 module.exports = router;
