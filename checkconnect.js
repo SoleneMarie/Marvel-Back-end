@@ -8,7 +8,7 @@ axios
     `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}`
   )
   .then((res) => {
-    console.log(JSON.stringify(res));
+    console.log(JSON.stringify(res.data));
   })
   .catch((error) => {
     console.log(JSON.stringify(error));
