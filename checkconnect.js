@@ -6,7 +6,10 @@ require("dotenv").config();
 console.log(process.env.API_KEY.slice(0, 2) + process.env.API_KEY.slice(-2));
 try {
   axios.get(
-    `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}`
+    `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}`,
+    (req, res) => {
+      console.log(res);
+    }
   );
   console.log(process.env.API_KEY.slice(0, 2) + process.env.API_KEY.slice(-2));
 } catch (error) {
